@@ -58,6 +58,7 @@ const items: HeroItem[] = [{
 
 export default function HomeHero() {
   const [textColor, setTextColor] = useState('#232323');
+  const [locked, setLocked] = useState(false);
   const [bgColor, setBgColor] = useState('white');
   const [isLight, setIsLight] = useState(true);
   const [showContent, setShowContent] = useState(false);
@@ -78,6 +79,7 @@ export default function HomeHero() {
   }
 
   const reset = () => {
+    if (locked) return;
     setTextColor('#232323');
     setBgColor('white');
     setIsLight(true);
@@ -90,6 +92,13 @@ export default function HomeHero() {
       background: bgColor,
     })
   }, [bgColor, textColor]);
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLocked(false);
+    }, 30000);
+  }, [locked]);
 
   return <div
     className={styles.homeHero}
@@ -104,7 +113,7 @@ export default function HomeHero() {
         <HomeHeroContent
           item={selectedItem}
         />
-      ): (
+      ) : (
         <div className={styles.logoWrapper}>
           <NorthStudioIcon className={styles.icon} fill={textColor} onClick={swapStudio}/>
           <div className={styles.companyMeta}>
@@ -124,12 +133,24 @@ export default function HomeHero() {
         <div
           key={item.title}
           onMouseEnter={() => {
-            setBgColor(item.bgColor);
-            setTextColor(item.txtColor);
-            setShowContent(true);
-            setSelectedItem(item);
+            if (!locked) {
+              setBgColor(item.bgColor);
+              setTextColor(item.txtColor);
+              setShowContent(true);
+              setSelectedItem(item);
+            }
           }}
           onMouseLeave={reset}
+          onClick={() => {
+            if (locked) {
+              setBgColor(item.bgColor);
+              setTextColor(item.txtColor);
+              setShowContent(true);
+              setSelectedItem(item);
+            }
+            setLocked(!locked);
+          }}
+          className={(selectedItem.title === item.title && locked) ? styles.pickerSelected : undefined}
         >
           {item.title}
         </div>

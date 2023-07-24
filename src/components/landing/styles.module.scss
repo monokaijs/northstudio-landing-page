@@ -14,14 +14,6 @@
   user-select: none; /* Standard syntax */
 }
 
-.homeHeroHeader {
-  height: 70px;
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
-  justify-content: space-between;
-}
-
 .branding {
   font-weight: 700;
 }
@@ -31,6 +23,10 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+}
+
+.pickerSelected {
+  font-weight: 600;
 }
 
 .logoWrapper {
