@@ -87,7 +87,7 @@ export default function HomeHero() {
           <NorthStudioIcon fill={textColor}/>
           <div className={styles.companyMeta}>
             <div className={styles.companyName}>
-              NorthStudio
+              North<div className={styles.studioPart}>Studio</div>
             </div>
           </div>
         </div>

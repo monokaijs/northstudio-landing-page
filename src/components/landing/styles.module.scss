@@ -44,6 +44,24 @@
 .companyName {
   font-weight: 700;
   font-size: 1.254rem;
+  opacity: 0;
+  animation-name: companyName;
+  animation-duration: 1000ms;
+  animation-delay: 1000ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  display: flex;
+  flex-direction: row;
+}
+
+.studioPart {
+  width: 0;
+  overflow: hidden;
+  animation-name: revealStudio;
+  animation-duration: 300ms;
+  animation-delay: 2000ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 .companyKeyPoints {
@@ -94,11 +112,29 @@
 
 @keyframes appear {
   from {
-    margin-bottom: -60px;
+    margin-bottom: -500px;
     opacity: 0;
   }
   to {
     margin-bottom: 0;
     opacity: 1;
+  }
+}
+
+@keyframes companyName {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes revealStudio {
+  from {
+    width: 0;
+  }
+  to {
+    width: 66px;
   }
 }
