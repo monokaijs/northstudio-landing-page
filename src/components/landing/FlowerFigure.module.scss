@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.col2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image1, .image2 {
+  background-size: cover;
+  background-position: center;
+  width: 300px;
+  aspect-ratio: .65;
+  border-radius: .6rem;
+  transition: all 200ms ease-in-out;
+
+  animation: appear 300ms linear;
+
+  &:hover {
+    transform: scale(1.25);
+  }
+}
+
+.image2 {
+  width: 200px;
+}
+
+.symbol {
+  width: 96px;
+  height: 96px;
+  margin-top: 24px;
+  background-color: #00000022;
+  border-radius: 1.24rem 1.24rem 5rem 1.24rem;
+  transition: all 200ms ease-in-out;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1140px) {
+  .col2 {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    display: none;
+  }
+}

@@ -1,0 +1,62 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  gap: 48px;
+  flex-direction: row;
+  padding: 16px;
+  align-items: center;
+
+  animation: appear 1000ms ease-in-out;
+}
+
+.figure {
+}
+
+.metaInfo {
+  flex: 1;
+
+  animation: appear 1000ms ease-in-out;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3rem;
+  width: 70%;
+  margin-bottom: 24px;
+}
+
+.description {
+  width: 80%;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.8rem;
+}
+
+
+@keyframes appear {
+  from {
+    margin-bottom: -60px;
+    opacity: 0;
+  }
+  to {
+    margin-bottom: 0;
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .container {
+    flex-direction: column-reverse;
+    padding: 32px;
+  }
+  .metaInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .title {
+    font-size: 2.4rem;
+  }
+}
