@@ -1,10 +1,11 @@
 "use client";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./styles.module.scss";
 import NorthStudioIcon from "@/assets/icons/NorthStudio";
 import NorthStudioPattern from "@/assets/northstudio-pattern.svg";
 import NorthStudioPatternLight from "@/assets/northstudio-pattern-light.svg";
 import HomeHeroContent from "@/components/landing/HomeHeroContent";
+import {useThemeContext} from "@/components/providers/ThemeProvider";
 
 export interface HeroItem {
   title: string;
@@ -62,6 +63,7 @@ export default function HomeHero() {
   const [showContent, setShowContent] = useState(false);
   const [selectedItem, setSelectedItem] = useState(items[0]);
   const [studio, setStudio] = useState('Studio');
+  const {setHeroColors} = useThemeContext();
 
   const swapStudio = () => {
     if (studio === 'Studio') {
@@ -81,6 +83,13 @@ export default function HomeHero() {
     setIsLight(true);
     setShowContent(false);
   }
+
+  useEffect(() => {
+    if (setHeroColors) setHeroColors({
+      text: textColor,
+      background: bgColor,
+    })
+  }, [bgColor, textColor]);
 
   return <div
     className={styles.homeHero}
