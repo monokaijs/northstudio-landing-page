@@ -61,6 +61,19 @@ export default function HomeHero() {
   const [isLight, setIsLight] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [selectedItem, setSelectedItem] = useState(items[0]);
+  const [studio, setStudio] = useState('Studio');
+
+  const swapStudio = () => {
+    if (studio === 'Studio') {
+      setStudio('Apps');
+    } else if (studio === 'Apps') {
+      setStudio('Lab');
+    } else if (studio === 'Lab') {
+      setStudio('Minds');
+    } else {
+      setStudio('Studio');
+    }
+  }
 
   const reset = () => {
     setTextColor('#232323');
@@ -84,10 +97,13 @@ export default function HomeHero() {
         />
       ): (
         <div className={styles.logoWrapper}>
-          <NorthStudioIcon fill={textColor}/>
+          <NorthStudioIcon className={styles.icon} fill={textColor} onClick={swapStudio}/>
           <div className={styles.companyMeta}>
             <div className={styles.companyName}>
-              North<div className={styles.studioPart}>Studio</div>
+              North
+              <div className={styles.studioPart} onClick={swapStudio}>
+                {studio}
+              </div>
             </div>
           </div>
         </div>
