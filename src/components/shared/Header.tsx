@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./Header.module.scss";
 import {useThemeContext} from "@/components/providers/ThemeProvider";
 import Hamburger from "@/assets/icons/Hamburger";
@@ -7,10 +7,19 @@ import NorthStudioIcon from "@/assets/icons/NorthStudio";
 
 export default function AppHeader() {
   const {heroColors} = useThemeContext();
+  const [showBg, setShowBg] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setShowBg(window.scrollY > 100);
+    });
+  }, []);
+
   return <div
     className={styles.container}
     style={{
-      color: heroColors.text
+      color: heroColors.text,
+      background: showBg ? heroColors.background : "transparent"
     }}
   >
     <div className={styles.headerContent}>
