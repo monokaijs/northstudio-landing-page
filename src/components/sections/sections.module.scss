@@ -1,0 +1,49 @@
+.section {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.sectionContent {
+  width: 100%;
+  max-width: 1400px;
+  padding: 6rem 2rem;
+
+  .storyText {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .storyTextContent {
+      width: 60%;
+    }
+    .storyTextTitle {
+      flex: 1;
+      text-align: right;
+      span {
+        font-size: 1.2rem;
+        opacity: .4;
+        transition: all 200ms ease-in-out;
+      }
+      h3 {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        span {
+          opacity: 1;
+        }
+      }
+    }
+
+    p {
+      line-height: 1.6rem;
+      margin-top: 2rem;
+    }
+  }
+}
