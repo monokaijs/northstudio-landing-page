@@ -26,7 +26,7 @@
 }
 
 .pickerSelected {
-  font-weight: 600;
+  opacity: 1!important;
 }
 
 .logoWrapper {
@@ -87,16 +87,23 @@
   margin-top: 8px;
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 1rem;
 
   div {
-    border-bottom: 2px solid;
     display: block;
     width: 6rem;
     text-align: center;
     cursor: pointer;
-    padding-bottom: 8px;
+    padding: .32rem 0;
+    border-radius: 66px;
+    opacity: .1;
+    transition: background-color 400ms ease-in-out;
+
+    &:hover, &.active {
+      opacity: 1;
+    }
   }
+
 }
 
 

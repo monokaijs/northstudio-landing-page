@@ -5,13 +5,13 @@ export const NavigationConfig = [{
 }, {
   key: 'story',
   title: 'Story',
-  url: '/story'
+  url: '#story'
 }, {
   key: 'career',
   title: 'Career',
-  url: '/career'
+  url: '#career'
 }, {
   key: 'contact',
   title: 'Contact',
-  url: '/contact'
+  url: '#contact'
 }]

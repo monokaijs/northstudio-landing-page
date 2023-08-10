@@ -142,15 +142,17 @@ export default function HomeHero() {
           }}
           onMouseLeave={reset}
           onClick={() => {
-            if (locked) {
-              setBgColor(item.bgColor);
-              setTextColor(item.txtColor);
-              setShowContent(true);
-              setSelectedItem(item);
-            }
-            setLocked(!locked);
+            setBgColor(item.bgColor);
+            setTextColor(item.txtColor);
+            setShowContent(true);
+            setSelectedItem(item);
+            setLocked(!(locked && selectedItem.title === item.title));
           }}
           className={(selectedItem.title === item.title && locked) ? styles.pickerSelected : undefined}
+          style={{
+            backgroundColor: textColor,
+            color: bgColor
+          }}
         >
           {item.title}
         </div>
