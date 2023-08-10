@@ -53,6 +53,9 @@
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
 
+  opacity: 0;
+  animation: appear 1000ms forwards;
+
   .figureMeta {
     color: white;
     position: absolute;
@@ -81,7 +84,8 @@
 .controls {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  justify-content: space-between;
+
   .btn {
     background-color: #23232311;
     color: #232323;
@@ -98,6 +102,48 @@
   .btn:last-of-type {
     text-align: right;
   }
+
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  .dotsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    .dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #232323;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .dotSelected {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: white;
+      }
+    }
+  }
 }
+
+@keyframes appear {
+  from {
+    transform: translateY(2rem);
+    opacity: .4;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 
