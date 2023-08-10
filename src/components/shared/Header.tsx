@@ -20,7 +20,17 @@ export default function AppHeader() {
       </div>
       <div className={styles.links}>
         {NavigationConfig.map(item => (
-          <a href={item.url} key={item.key} style={{color: heroColors.text}}>
+          <a
+            href={item.url} key={item.key} style={{color: heroColors.text}}
+            onClick={function (e) {
+              e.preventDefault();
+              const id = (e.target as HTMLLinkElement).href.split('/').pop();
+              if (!id) return;
+              document.querySelector(id as string)?.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }}
+          >
             {item.title}
           </a>
         ))}

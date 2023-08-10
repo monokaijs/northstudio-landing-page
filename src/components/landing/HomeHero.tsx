@@ -101,6 +101,7 @@ export default function HomeHero() {
   }, [locked]);
 
   return <div
+    id={'home'}
     className={styles.homeHero}
     style={{
       backgroundImage: `url(${isLight ? NorthStudioPattern.src : NorthStudioPatternLight.src})`,

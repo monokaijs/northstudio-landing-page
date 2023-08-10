@@ -1,7 +1,7 @@
 export const NavigationConfig = [{
   key: 'home',
   title: 'Home',
-  url: '/'
+  url: '#home'
 }, {
   key: 'story',
   title: 'Story',
