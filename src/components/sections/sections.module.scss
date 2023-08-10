@@ -5,6 +5,22 @@
   justify-content: center;
 }
 
+@media (max-width: 1080px) {
+  .storyText {
+    flex-direction: column-reverse!important;
+    justify-content: flex-start;
+    align-items: flex-start!important;
+
+    .storyTextTitle {
+      text-align: left!important;
+    }
+
+    .storyTextContent {
+      width: 100%!important;
+    }
+  }
+}
+
 .sectionContent {
   width: 100%;
   max-width: 1400px;
