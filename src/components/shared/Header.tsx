@@ -32,10 +32,12 @@ export default function AppHeader() {
           <a
             href={item.url} key={item.key} style={{color: heroColors.text}}
             onClick={function (e) {
+              const href = (e.target as HTMLLinkElement).href;
+              if (!href.includes('#')) return;
               e.preventDefault();
-              const id = (e.target as HTMLLinkElement).href.split('/').pop();
+              const id = href.split('#').pop();
               if (!id) return;
-              document.querySelector(id as string)?.scrollIntoView({
+              document.querySelector(`#${id}`)?.scrollIntoView({
                 behavior: 'smooth'
               });
             }}

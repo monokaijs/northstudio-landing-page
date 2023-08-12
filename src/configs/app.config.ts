@@ -3,6 +3,14 @@ export const NavigationConfig = [{
   title: 'Home',
   url: '#home'
 }, {
+  key: 'services',
+  title: 'Services',
+  url: '#services'
+}, {
+  key: 'team',
+  title: 'Team',
+  url: '/team'
+}, {
   key: 'story',
   title: 'Story',
   url: '#story'
@@ -13,5 +21,5 @@ export const NavigationConfig = [{
 }, {
   key: 'contact',
   title: 'Contact',
-  url: '#contact'
+  url: '/contact'
 }]
