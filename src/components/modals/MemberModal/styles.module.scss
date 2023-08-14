@@ -1,0 +1,163 @@
+.outer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #23232388;
+  z-index: 9999;
+  opacity: 0;
+
+  animation: fadeIn 400ms forwards ease-in-out;
+
+  &.out {
+    animation: fadeOut 400ms forwards;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 800px;
+  background-color: black;
+  border-radius: 24px;
+  overflow: hidden;
+  color: #ffffff;
+
+  .header {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    margin-bottom: 60px;
+
+    .bg {
+      position: absolute;
+      left: 0; right: 0; top: 0; bottom: 0;
+      background-image: url('https://www.thespruce.com/thmb/E4-k3m09ux-6DcvVaBtvuZcUB30=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/babys-breath-garden-favorite-4082480-hero-3541658fa2994c57b0b7bea92973f2b8.JPG');
+      background-size: cover;
+      background-position: center;
+      transition: all 400ms ease-in-out;
+      filter: grayscale(1);
+    }
+
+    &:hover {
+      .bg {
+        filter: grayscale(0);
+      }
+    }
+
+    .closeBtn {
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #232323;
+      cursor: pointer;
+      z-index: 99;
+    }
+    .contactArea {
+      position: absolute;
+      right: 30px;
+      bottom: -40px;
+      z-index: 99;
+      .contactBtn {
+        gap: 4px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: .8rem;
+        color: #232323;
+        padding: 0 24px;
+        height: 32px;
+        background-color: white;
+        border-radius: 32px;
+        cursor: pointer;
+        filter: none;
+
+        &:hover {
+          background: yellowgreen;
+          color: white;
+          fill: white;
+        }
+      }
+    }
+
+    .avatar {
+      position: absolute;
+      left: 32px;
+      bottom: -40px;
+      width: 120px;
+      height: 140px;
+      background-size: cover;
+      background-position: center;
+      z-index: 9;
+      border-radius: 16px;
+      border: 4px solid #ffffff;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    }
+  }
+  .contentContainer {
+    margin: 0 30px;
+  }
+  .name {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .position {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+    font-size: .8rem;
+    color: #ffffff;
+    gap: .2rem;
+    opacity: .3;
+    transition: all 400ms ease-in-out;
+
+    &:hover {
+      opacity: .8;
+    }
+
+    .atSign {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
