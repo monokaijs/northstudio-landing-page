@@ -220,6 +220,9 @@ export default function TeamPage() {
               backgroundImage: `url(${mem.photo})`
             }}
           >
+            <div className={styles.name}>
+              {mem.name}
+            </div>
             <div className={styles.experience}>
               {new Date().getFullYear() - mem.onboarding + 1} <span>years</span>
             </div>
