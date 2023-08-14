@@ -1,0 +1,40 @@
+.outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 1rem;
+
+  .content {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
+
+.teamContainer {
+  margin-top: 6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  grid-auto-rows: 200px;
+
+  .member {
+    background-image: url(https://www.hindustantimes.com/ht-img/img/2023/07/16/1600x900/Oppenheimer_christopher_nolan_1689495141477_1689495141692.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    transition: all 400ms ease-in-out;
+
+    &:hover {
+      grid-column-end: span 2;
+      grid-row-end: span 1;
+    }
+  }
+
+  .xl {
+    grid-column-end: span 2;
+    grid-row-end: span 1;
+  }
+}

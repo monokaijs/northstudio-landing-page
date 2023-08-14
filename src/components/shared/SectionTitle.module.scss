@@ -5,11 +5,7 @@
 
   &:hover {
     .shadow {
-      left: 0;
-      top: 0;
-      line-height: 5rem;
-      font-weight: 700;
-      transform: scale(1);
+      top: -2rem;
     }
   }
 }
@@ -29,7 +25,7 @@
   opacity: .1;
   left: -1rem;
   top: -2.6rem;
-  transition: all 200ms ease-in-out;
+  transition: all 400ms ease-out;
   transform: scale(1.8);
   transform-origin: top left;
 }
