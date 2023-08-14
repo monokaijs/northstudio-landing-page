@@ -203,6 +203,21 @@ const members: Member[] = [{
   certificates: [],
   photo: 'https://i.imgur.com/C7kkL8B.jpg',
   onboarding: 2022,
+}, {
+  name: 'Cao The Anh',
+  position: 'Frontend Developer',
+  skills: [
+    'React.Js'
+  ],
+  education: {
+    level: 'Bachelor',
+    school: 'FPT',
+    graduationYear: 2023
+  },
+  awards: [],
+  certificates: [],
+  photo: 'https://i.imgur.com/p6qbHbu.png',
+  onboarding: 2022,
 }]
 
 export default function TeamPage() {
