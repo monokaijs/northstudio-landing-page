@@ -16,25 +16,69 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  grid-auto-rows: 200px;
+  grid-auto-rows: 300px;
 
   .member {
-    background-image: url(https://www.hindustantimes.com/ht-img/img/2023/07/16/1600x900/Oppenheimer_christopher_nolan_1689495141477_1689495141692.jpg);
+    //background-image: url(https://www.hindustantimes.com/ht-img/img/2023/07/16/1600x900/Oppenheimer_christopher_nolan_1689495141477_1689495141692.jpg);
     background-size: cover;
     background-position: center;
     border-radius: 8px;
     filter: grayscale(1);
     -webkit-filter: grayscale(1);
     transition: all 400ms ease-in-out;
+    cursor: pointer;
+    position: relative;
 
     &:hover {
-      grid-column-end: span 2;
-      grid-row-end: span 1;
+      transform: scale(1.03);
+      filter: grayscale(0);
+      background-size: cover;
+
+      .experience {
+        opacity: 1;
+        font-size: 1rem;
+        bottom: 1rem;
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .experience {
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      opacity: .6;
+      transition: all 400ms ease-in-out;
+
+      span {
+        transition: all 400ms ease-in-out;
+        font-size: 1rem;
+      }
     }
   }
 
   .xl {
     grid-column-end: span 2;
     grid-row-end: span 1;
+    .experience {
+      font-size: 4rem;
+      span {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .xl2 {
+    grid-column-end: span 1;
+    grid-row-end: span 2;
+    .experience {
+      font-size: 4rem;
+      span {
+        font-size: 1.5rem;
+      }
+    }
   }
 }
